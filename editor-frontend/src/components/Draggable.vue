@@ -1,11 +1,9 @@
 <script setup lang="ts">
-import { ref } from "vue";
-
-const myArray = ref([
-  "Bat wing soup",
-  "Spicy Octopus",
-  "Anything from Taco Bell",
-]);
+// const myArray = ref([
+//   "Bat wing soup",
+//   "Spicy Octopus",
+//   "Anything from Taco Bell",
+// ]);
 </script>
 
 <template>

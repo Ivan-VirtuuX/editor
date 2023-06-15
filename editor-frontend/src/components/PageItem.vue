@@ -46,7 +46,7 @@ const onClickDeletePage = async () => {
     <div class="page-item-updated-at">
       {{ convertDate(page.updatedAt) }}
     </div>
-    <div class="page-actions" :style="isActionsVisible && 'opacity: 1'">
+    <div class="page-actions" :style="isActionsVisible ? 'opacity: 1' : ''">
       <button class="delete-page-button" @click="onClickDeletePage">
         <font-awesome-icon icon="fa-solid fa-trash" class="icon" />
         <span class="tooltip" data-tooltip="Удалить" />
