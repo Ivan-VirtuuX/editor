@@ -9,7 +9,7 @@ const documents = ref<IDocument[]>([]);
 onMounted(async () => {
   try {
     const { data } = await axios.get<IDocument[]>(
-      "http://localhost:7777/constructor-document"
+      "https://editor-production-1285.up.railway.app/constructor-document"
     );
 
     documents.value = JSON.parse(JSON.stringify(data));

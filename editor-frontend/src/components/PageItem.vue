@@ -18,7 +18,7 @@ const emit = defineEmits(["delete-page"]);
 const onClickDeletePage = async () => {
   try {
     await axios.delete(
-      `http://localhost:7777/constructor-document/${route.params.id}/page/${route.params.itemId}`
+      `https://editor-production-1285.up.railway.app/${route.params.id}/page/${route.params.itemId}`
     );
 
     emit("delete-page", page.pageId);

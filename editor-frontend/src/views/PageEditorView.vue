@@ -28,7 +28,7 @@ const setActiveTab = (tab: number) => (activeTab.value = tab);
 const getAllPages = async () => {
   try {
     const { data } = await axios.get<IPage[]>(
-      `http://localhost:7777/constructor-document/${route.params.id}/page`
+      `https://editor-production-1285.up.railway.app/constructor-document/${route.params.id}/page`
     );
 
     pages.value = [...data];
@@ -40,7 +40,7 @@ const getAllPages = async () => {
 const getCurrentPage = async () => {
   try {
     const { data } = await axios.get<IPage>(
-      `http://localhost:7777/constructor-document/${route.params.id}/page/${route.params.itemId}`
+      `https://editor-production-1285.up.railway.app/constructor-document/${route.params.id}/page/${route.params.itemId}`
     );
 
     currentPage.value = data as IPage;
@@ -60,7 +60,7 @@ const onClickPage = async (page: IPage) => {
 const onClickCreatePage = async (pageName: string, markup?: string) => {
   try {
     const { data } = await axios.post(
-      `http://localhost:7777/constructor-document/${route.params.id}/page`,
+      `https://editor-production-1285.up.railway.app/constructor-document/${route.params.id}/page`,
       {
         name: pageName,
         author: "Администратор",
@@ -95,7 +95,7 @@ const onClickCreateTitlePage = () => {
 const onClickSavePage = async () => {
   try {
     await axios.patch(
-      `http://localhost:7777/constructor-document/${route.params.id}/page/${route.params.itemId}`,
+      `https://editor-production-1285.up.railway.app/constructor-document/${route.params.id}/page/${route.params.itemId}`,
       {
         name: currentPageNameInput.value,
         markup: currentPageMarkup,
