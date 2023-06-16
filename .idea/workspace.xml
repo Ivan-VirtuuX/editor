@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2f324184-9bc8-46d5-9f14-147f3d9811bb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/editor-frontend/src/views/PageEditorView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/editor-frontend/src/views/PageEditorView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/editor-frontend/src/numberValidator.ts" beforeDir="false" afterPath="$PROJECT_DIR$/editor-frontend/src/numberValidator.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,7 +150,7 @@
       <workItem from="1686813259975" duration="6911000" />
       <workItem from="1686820206150" duration="6618000" />
       <workItem from="1686899845669" duration="5677000" />
-      <workItem from="1686907534237" duration="9045000" />
+      <workItem from="1686907534237" duration="9195000" />
     </task>
     <servers />
   </component>
