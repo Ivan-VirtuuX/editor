@@ -5,41 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2f324184-9bc8-46d5-9f14-147f3d9811bb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/editor-frontend/src/numberValidator.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/editor-frontend/src/router.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/editor-frontend/tinyMCE/languages/ru.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/prettier.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/editor-frontend/.env" beforeDir="false" afterPath="$PROJECT_DIR$/editor-frontend/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/editor-frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/editor-frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/editor-frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/editor-frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/editor-frontend/src/assets/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/editor-frontend/src/assets/main.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/editor-frontend/src/components/DocumentItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/editor-frontend/src/components/DocumentItem.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/editor-frontend/src/components/Draggable.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/editor-frontend/src/components/PageItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/editor-frontend/src/components/PageItem.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/editor-frontend/src/editor.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/editor-frontend/src/editor.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/editor-frontend/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/editor-frontend/src/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/editor-frontend/src/shims-vue.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/editor-frontend/src/shims-vue.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/editor-frontend/src/views/ConstructorView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/editor-frontend/src/views/ConstructorView.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/editor-frontend/src/views/PageEditorView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/editor-frontend/src/views/PageEditorView.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/editor-frontend/tinyMCE/languages/ru.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/editor-frontend/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/editor-frontend/yarn.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.yarn-integrity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@fortawesome/vue-fontawesome/CHANGELOG.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@fortawesome/vue-fontawesome/LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@fortawesome/vue-fontawesome/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@fortawesome/vue-fontawesome/UPGRADING.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@fortawesome/vue-fontawesome/index.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@fortawesome/vue-fontawesome/index.es.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@fortawesome/vue-fontawesome/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@fortawesome/vue-fontawesome/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@fortawesome/vue-fontawesome/src/components/FontAwesomeIcon.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@fortawesome/vue-fontawesome/src/components/FontAwesomeLayers.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@fortawesome/vue-fontawesome/src/components/FontAwesomeLayersText.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@fortawesome/vue-fontawesome/src/converter.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@fortawesome/vue-fontawesome/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@fortawesome/vue-fontawesome/src/logger.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@fortawesome/vue-fontawesome/src/utils.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +82,7 @@
       <recent name="E:\Документы\vue-js-editor-app\tinyMCE\languages" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.dev (1)">
+  <component name="RunManager" selected="npm.build">
     <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/editor-frontend/package.json" />
       <command value="run" />
@@ -158,9 +125,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.build" />
         <item itemvalue="npm.dev (1)" />
         <item itemvalue="npm.start:dev" />
-        <item itemvalue="npm.build" />
         <item itemvalue="npm.dev" />
       </list>
     </recent_temporary>
@@ -183,7 +150,7 @@
       <workItem from="1686813259975" duration="6911000" />
       <workItem from="1686820206150" duration="6618000" />
       <workItem from="1686899845669" duration="5677000" />
-      <workItem from="1686907534237" duration="8271000" />
+      <workItem from="1686907534237" duration="9045000" />
     </task>
     <servers />
   </component>

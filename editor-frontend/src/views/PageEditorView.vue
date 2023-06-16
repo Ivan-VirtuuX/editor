@@ -168,9 +168,11 @@ const onClickSaveField = (attributeName: string) => {
     `#${attributeName}`
   );
 
-  attributeTag.innerHTML = attributes.value.find(
-    (el) => el.attributeName === attributeName
-  ).value;
+  if (attributeTag)
+    attributeTag.innerHTML =
+      attributes.value.find((el) => el.attributeName === attributeName)
+        ?.value || "";
+
   content.value = convertedEditorContent.body.innerHTML;
 };
 
