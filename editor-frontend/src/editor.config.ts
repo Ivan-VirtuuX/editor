@@ -32,12 +32,12 @@ const filePickerCallback = (
 
 export const tinymceConfig = reactive({
   plugins:
-    "link image lists table code fullscreen preview media codesample emoticons wordcount template",
+    "link image lists table code fullscreen preview media codesample emoticons wordcount template export",
   file_picker_callback: filePickerCallback,
   language: "ru",
-  language_url: "/tinyMCE/languages/ru.js",
+  language_url: "/tinyMCE/languages/ru.ts",
   toolbar:
-    "undo redo | styles | visualblocks | styleselect | bold italic | alignleft  aligncenter alignright alignjustify | numlist bullist outdent indent | link image print preview media | fontfamily fontsize | forecolor backcolor emoticons | codesample | blockquote | wordcount",
+    "undo redo | styles | visualblocks | styleselect | bold italic | alignleft  aligncenter alignright alignjustify | numlist bullist outdent indent | link image print preview media | fontfamily fontsize | forecolor backcolor emoticons | codesample | blockquote | wordcount | export",
   toolbar_mode: "wrap",
   font_size_formats: "8pt 10pt 12pt 14pt 18pt 24pt 36pt",
   statusbar: false,

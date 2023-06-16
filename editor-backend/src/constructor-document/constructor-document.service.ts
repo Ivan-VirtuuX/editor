@@ -53,4 +53,8 @@ export class ConstructorDocumentService {
   deletePage(documentId: string, pageId: string) {
     return this.constructorDocumentRepository.deletePage(documentId, pageId);
   }
+
+  deleteDocument(documentId: string) {
+    return this.constructorDocumentRepository.deleteDocument(documentId);
+  }
 }

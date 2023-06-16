@@ -1,27 +1,33 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import { IPage } from "../types.ts";
-import axios from "axios";
 import { useRoute, useRouter } from "vue-router";
-import { convertDate } from "../utils/convertDate.ts";
+
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+
+import axios from "axios";
+
+import { IPage } from "../types.ts";
+
+import { convertDate } from "../utils/convertDate.ts";
 
 const { page } = defineProps<{ page: IPage }>();
 
 const route = useRoute();
 const router = useRouter();
 
-const isActionsVisible = ref(false);
+const isActionsVisible = ref<boolean>(false);
 
 const emit = defineEmits(["delete-page"]);
 
 const onClickDeletePage = async () => {
   try {
     await axios.delete(
-      `https://editor-production-1285.up.railway.app/${route.params.id}/page/${route.params.itemId}`
+      `${import.meta.env.VITE_SERVER_URL}/constructor-document/${
+        route.params.id
+      }/page/${route.params.itemId}`
     );
 
-    emit("delete-page", page.pageId);
+    await emit("delete-page", page.pageId);
 
     await router.push(`/constructor/editor/id=${route.params.id}`);
   } catch (err) {
@@ -63,7 +69,6 @@ const onClickDeletePage = async () => {
   user-select: none;
   padding: 7px;
   margin: 3px;
-  position: relative;
 }
 
 .page-item-left-side {
@@ -72,6 +77,7 @@ const onClickDeletePage = async () => {
   -webkit-column-gap: 5px;
   -moz-column-gap: 5px;
   column-gap: 5px;
+  position: relative;
 }
 
 .page-item-left-side .icon {

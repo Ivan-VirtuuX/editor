@@ -4,7 +4,43 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f324184-9bc8-46d5-9f14-147f3d9811bb" name="Changes" comment="" />
+    <list default="true" id="2f324184-9bc8-46d5-9f14-147f3d9811bb" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/editor-frontend/src/numberValidator.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor-frontend/src/router.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor-frontend/tinyMCE/languages/ru.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/prettier.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/editor-frontend/.env" beforeDir="false" afterPath="$PROJECT_DIR$/editor-frontend/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/editor-frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/editor-frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/editor-frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/editor-frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/editor-frontend/src/assets/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/editor-frontend/src/assets/main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/editor-frontend/src/components/DocumentItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/editor-frontend/src/components/DocumentItem.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/editor-frontend/src/components/Draggable.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/editor-frontend/src/components/PageItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/editor-frontend/src/components/PageItem.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/editor-frontend/src/editor.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/editor-frontend/src/editor.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/editor-frontend/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/editor-frontend/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/editor-frontend/src/shims-vue.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/editor-frontend/src/shims-vue.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/editor-frontend/src/views/ConstructorView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/editor-frontend/src/views/ConstructorView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/editor-frontend/src/views/PageEditorView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/editor-frontend/src/views/PageEditorView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/editor-frontend/tinyMCE/languages/ru.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/editor-frontend/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/editor-frontend/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.yarn-integrity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@fortawesome/vue-fontawesome/CHANGELOG.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@fortawesome/vue-fontawesome/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@fortawesome/vue-fontawesome/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@fortawesome/vue-fontawesome/UPGRADING.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@fortawesome/vue-fontawesome/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@fortawesome/vue-fontawesome/index.es.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@fortawesome/vue-fontawesome/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@fortawesome/vue-fontawesome/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@fortawesome/vue-fontawesome/src/components/FontAwesomeIcon.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@fortawesome/vue-fontawesome/src/components/FontAwesomeLayers.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@fortawesome/vue-fontawesome/src/components/FontAwesomeLayersText.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@fortawesome/vue-fontawesome/src/converter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@fortawesome/vue-fontawesome/src/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@fortawesome/vue-fontawesome/src/logger.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@fortawesome/vue-fontawesome/src/utils.js" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,30 +76,30 @@
     <option name="showScratchesAndConsoles" value="false" />
     <option name="sortByType" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "E:/Документы/vue-js-editor-app/editor-backend/src/constructor-document/dto",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "prettierjs.PrettierConfiguration.Package": "C:\\Users\\VirtuuX\\AppData\\Roaming\\npm\\node_modules\\prettier",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "ts.external.directory.path": "E:\\Документы\\vue-js-editor-app\\editor-frontend\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/Документы/vue-js-editor-app/editor-backend/src/constructor-document/dto&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;E:\\Документы\\vue-js-editor-app\\editor-backend\\node_modules\\prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;E:\\Документы\\vue-js-editor-app\\editor-frontend\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "vue.recent.templates": [
-      "Vue Composition API Component"
+  &quot;keyToStringList&quot;: {
+    &quot;vue.recent.templates&quot;: [
+      &quot;Vue Composition API Component&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\Документы\vue-js-editor-app\editor-backend\src\constructor-document\dto" />
@@ -79,7 +115,7 @@
       <recent name="E:\Документы\vue-js-editor-app\tinyMCE\languages" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.build">
+  <component name="RunManager" selected="npm.dev (1)">
     <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/editor-frontend/package.json" />
       <command value="run" />
@@ -122,9 +158,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.build" />
         <item itemvalue="npm.dev (1)" />
         <item itemvalue="npm.start:dev" />
+        <item itemvalue="npm.build" />
         <item itemvalue="npm.dev" />
       </list>
     </recent_temporary>
@@ -145,7 +181,9 @@
       <workItem from="1686653257016" duration="9418000" />
       <workItem from="1686734792879" duration="8397000" />
       <workItem from="1686813259975" duration="6911000" />
-      <workItem from="1686820206150" duration="6477000" />
+      <workItem from="1686820206150" duration="6618000" />
+      <workItem from="1686899845669" duration="5677000" />
+      <workItem from="1686907534237" duration="8271000" />
     </task>
     <servers />
   </component>

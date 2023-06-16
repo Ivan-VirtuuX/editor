@@ -105,4 +105,10 @@ export class ConstructorDocumentRepository {
       },
     );
   }
+
+  async deleteDocument(documentId: string) {
+    return this.constructorDocumentRepository.findOneAndRemove({
+      documentId,
+    });
+  }
 }

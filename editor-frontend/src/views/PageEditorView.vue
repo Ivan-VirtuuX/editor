@@ -1,24 +1,62 @@
 <script setup lang="ts">
-import { onMounted, ref, watch, watchEffect } from "vue";
-import PageItem from "../components/PageItem.vue";
-import editor from "@tinymce/tinymce-vue";
+import { computed, onMounted, ref, watch, watchEffect } from "vue";
 import { useRoute, useRouter } from "vue-router";
-import axios from "axios";
-import PageCreateItem from "../components/PageCreateItem.vue";
-import { IPage } from "../types.ts";
-import { tinymceConfig } from "../editor.config.ts";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+
+import { Modal } from "usemodal-vue3";
+
+import PageItem from "../components/PageItem.vue";
+
+import editor from "@tinymce/tinymce-vue";
+import { tinymceConfig } from "../editor.config.ts";
+
+import axios from "axios";
+
+import { IPage } from "../types.ts";
+
 import { convertDate } from "../utils/convertDate.ts";
+
+import PageCreateItem from "../components/PageCreateItem.vue";
+import { numberValidator } from "../numberValidator.ts";
 
 const API_KEY = import.meta.env.VITE_API_KEY;
 
-const content = ref("");
-const currentPageMarkup = ref("");
-const currentPageNameInput = ref("");
-const activeTab = ref(1);
+const content = ref<string>("");
+const currentPageMarkup = ref<string>("");
+const currentPageNameInput = ref<string>("");
+const activeTab = ref<number>(1);
 const tinyMCEEditor = ref();
 const pages = ref<IPage[]>([]);
 const currentPage = ref<IPage>();
+const isVisible = ref<boolean>(false);
+const yearAttributeInput = ref<string>("");
+const fullOrgNameAttributeInput = ref<string>("");
+const shortOrgNameAttributeInput = ref<string>("");
+const hoursAttributeInput = ref<string>("");
+const cityAttributeInput = ref<string>("");
+
+const attributes = computed<{ attributeName: string; value: string }[]>(() => [
+  {
+    attributeName: "year",
+    value: yearAttributeInput.value,
+  },
+  {
+    attributeName: "fullOrgName",
+    value: fullOrgNameAttributeInput.value,
+  },
+  {
+    attributeName: "shortOrgName",
+    value: shortOrgNameAttributeInput.value,
+  },
+  {
+    attributeName: "hours",
+    value: hoursAttributeInput.value,
+  },
+  {
+    attributeName: "city",
+    value: cityAttributeInput.value + " ",
+  },
+]);
 
 const route = useRoute();
 const router = useRouter();
@@ -28,7 +66,9 @@ const setActiveTab = (tab: number) => (activeTab.value = tab);
 const getAllPages = async () => {
   try {
     const { data } = await axios.get<IPage[]>(
-      `https://editor-production-1285.up.railway.app/constructor-document/${route.params.id}/page`
+      `${import.meta.env.VITE_SERVER_URL}/constructor-document/${
+        route.params.id
+      }/page`
     );
 
     pages.value = [...data];
@@ -40,7 +80,9 @@ const getAllPages = async () => {
 const getCurrentPage = async () => {
   try {
     const { data } = await axios.get<IPage>(
-      `https://editor-production-1285.up.railway.app/constructor-document/${route.params.id}/page/${route.params.itemId}`
+      `${import.meta.env.VITE_SERVER_URL}/constructor-document/${
+        route.params.id
+      }/page/${route.params.itemId}`
     );
 
     currentPage.value = data as IPage;
@@ -60,7 +102,9 @@ const onClickPage = async (page: IPage) => {
 const onClickCreatePage = async (pageName: string, markup?: string) => {
   try {
     const { data } = await axios.post(
-      `https://editor-production-1285.up.railway.app/constructor-document/${route.params.id}/page`,
+      `${import.meta.env.VITE_SERVER_URL}/constructor-document/${
+        route.params.id
+      }/page`,
       {
         name: pageName,
         author: "Администратор",
@@ -84,7 +128,7 @@ const onClickCreatePage = async (pageName: string, markup?: string) => {
 
 const onClickCreateTitlePage = () => {
   const markup =
-    "<p><strong>Полное наименование организации</strong></p><p><strong>Сокращенное наименование организации</strong></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><strong>ПРОГРАММА</strong></p><p><strong>ПОВЫШЕНИЯ КВАЛИФИКАЦИИ/ПРОФЕССИОНАЛЬНАЯ ПЕРЕПОДГОТОВКА</strong> (на выбор)</p><p><br></p><p>Количество часов часа</p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><strong>Город 202_</strong></p>";
+    "<p><strong id='fullOrgName'>Полное наименование организации</strong></p><p><strong id='shortOrgName'>Сокращенное наименование организации</strong></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><strong>ПРОГРАММА</strong></p><p><strong>ПОВЫШЕНИЯ КВАЛИФИКАЦИИ/ПРОФЕССИОНАЛЬНАЯ ПЕРЕПОДГОТОВКА</strong> (на выбор)</p><p><br></p><p id='hours'>Количество часов часа</p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><strong id='city'>Город </strong><strong id='year'>202_</strong></p>";
 
   content.value = markup;
 
@@ -95,7 +139,9 @@ const onClickCreateTitlePage = () => {
 const onClickSavePage = async () => {
   try {
     await axios.patch(
-      `https://editor-production-1285.up.railway.app/constructor-document/${route.params.id}/page/${route.params.itemId}`,
+      `${import.meta.env.VITE_SERVER_URL}/constructor-document/${
+        route.params.id
+      }/page/${route.params.itemId}`,
       {
         name: currentPageNameInput.value,
         markup: currentPageMarkup,
@@ -112,13 +158,35 @@ const onDeletePage = (pageId: string) => {
   content.value = "";
 };
 
-onMounted(() => {
-  getAllPages();
-  getCurrentPage();
+const onClickSaveField = (attributeName: string) => {
+  const domParser = new DOMParser();
+  const convertedEditorContent = domParser.parseFromString(
+    content.value,
+    "text/html"
+  );
+  const attributeTag = convertedEditorContent.body.querySelector(
+    `#${attributeName}`
+  );
+
+  attributeTag.innerHTML = attributes.value.find(
+    (el) => el.attributeName === attributeName
+  ).value;
+  content.value = convertedEditorContent.body.innerHTML;
+};
+
+onMounted(async () => {
+  await getAllPages();
+
+  if (pages.value.length) await getCurrentPage();
 });
 
 watchEffect(() => {
   content.value = currentPage.value?.markup || "";
+
+  if (pages.value.length && pages.value[0].pageId)
+    router.push(
+      `/constructor/editor/id=${route.params.id}/itemId=${pages.value[0].pageId}`
+    );
 });
 
 watch(content, () => {
@@ -139,9 +207,8 @@ watch(content, () => {
           :class="activeTab === 2 && 'active'"
           @click="setActiveTab(2)"
         >
-          <font-awesome-icon icon="fa-solid fa-plus" class="icon" /><span
-            >Добавить</span
-          >
+          <font-awesome-icon icon="fa-solid fa-plus" class="icon" />
+          <span>Добавить</span>
         </button>
       </div>
       <div class="left-side-documents-list" v-if="activeTab === 1">
@@ -165,9 +232,6 @@ watch(content, () => {
         />
       </div>
     </div>
-
-    <!--    <draggable />-->
-
     <div class="right-side">
       <div class="right-side-head">
         <a href="#">
@@ -194,6 +258,12 @@ watch(content, () => {
           file_picker_types="image"
         />
         <div class="editor-footer">
+          <button
+            @click="isVisible = true"
+            class="editor-footer-add-attribute-button"
+          >
+            <font-awesome-icon icon="fa-solid fa-plus" />
+          </button>
           <button @click="onClickSavePage" class="editor-footer-save-button">
             <font-awesome-icon icon="fa-solid fa-save" />
           </button>
@@ -201,6 +271,79 @@ watch(content, () => {
       </div>
     </div>
   </div>
+  <Modal
+    v-model:visible="isVisible"
+    :cancelButton="{ text: 'Закрыть' }"
+    title="Атрибуты"
+  >
+    <div class="attributes">
+      <div class="attribute">
+        <label for="1">Год</label>
+        <input
+          id="1"
+          type="text"
+          v-model="yearAttributeInput"
+          @keypress="numberValidator"
+        />
+        <button
+          class="save-button"
+          @click="onClickSaveField('year')"
+          v-show="yearAttributeInput"
+        >
+          <font-awesome-icon icon="fa-solid fa-save" />
+        </button>
+      </div>
+      <div class="attribute">
+        <label for="2">Наименование организации</label>
+        <input id="2" type="text" v-model="fullOrgNameAttributeInput" />
+        <button
+          class="save-button"
+          @click="onClickSaveField('fullOrgName')"
+          v-show="fullOrgNameAttributeInput"
+        >
+          <font-awesome-icon icon="fa-solid fa-save" />
+        </button>
+      </div>
+      <div class="attribute">
+        <label for="3">Сокращенное наименование организации</label>
+        <input id="3" type="text" v-model="shortOrgNameAttributeInput" />
+        <button
+          class="save-button"
+          @click="onClickSaveField('shortOrgName')"
+          v-show="shortOrgNameAttributeInput"
+        >
+          <font-awesome-icon icon="fa-solid fa-save" />
+        </button>
+      </div>
+      <div class="attribute">
+        <label for="4">Количество часов</label>
+        <input
+          id="4"
+          type="text"
+          v-model="hoursAttributeInput"
+          @keypress="numberValidator"
+        />
+        <button
+          class="save-button"
+          @click="onClickSaveField('hours')"
+          v-show="hoursAttributeInput"
+        >
+          <font-awesome-icon icon="fa-solid fa-save" />
+        </button>
+      </div>
+      <div class="attribute">
+        <label for="5">Город</label>
+        <input id="5" type="text" v-model="cityAttributeInput" />
+        <button
+          class="save-button"
+          @click="onClickSaveField('city')"
+          v-show="cityAttributeInput"
+        >
+          <font-awesome-icon icon="fa-solid fa-save" />
+        </button>
+      </div>
+    </div>
+  </Modal>
 </template>
 
 <style scoped lang="scss">
@@ -355,9 +498,14 @@ watch(content, () => {
   top: 0;
   right: 10px;
   z-index: 2;
+  display: flex;
+  -webkit-column-gap: 10px;
+  -moz-column-gap: 10px;
+  column-gap: 10px;
 }
 
-.editor-footer-save-button {
+.editor-footer-save-button,
+.editor-footer-add-attribute-button {
   background: #019ff8;
   color: #fff;
   padding: 10px;
@@ -368,6 +516,15 @@ watch(content, () => {
   align-items: center;
   justify-content: center;
   font-size: 15px;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background: #01bef8;
+  }
 }
 
 .left-side-documents-list {
@@ -390,5 +547,56 @@ watch(content, () => {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.attributes {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.attribute {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  -webkit-column-gap: 10px;
+  -moz-column-gap: 10px;
+  column-gap: 10px;
+  position: relative;
+
+  label {
+    color: #3b4477;
+    font-weight: 700;
+  }
+
+  input {
+    font-size: 15px;
+    border: 1px solid rgba(51, 54, 66, 0.1);
+    padding: 5px 30px 5px 10px;
+    border-radius: 5px;
+    color: #3b4477;
+
+    &::placeholder {
+      color: #9c9c9c;
+    }
+  }
+}
+
+.save-button {
+  position: absolute;
+  right: 0;
+  padding: 10px;
+  background: transparent;
+  font-size: 15px;
+  color: #3b4477;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    color: #019ff8;
+  }
 }
 </style>

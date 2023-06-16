@@ -74,4 +74,9 @@ export class ConstructorDocumentController {
   deletePage(@Param('id') documentId: string, @Param('pageId') pageId: string) {
     return this.constructorDocumentService.deletePage(documentId, pageId);
   }
+
+  @Delete(':id')
+  deleteDocument(@Param('id') documentId: string) {
+    return this.constructorDocumentService.deleteDocument(documentId);
+  }
 }
