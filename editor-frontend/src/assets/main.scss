@@ -32,6 +32,10 @@ aside {
   display: block;
 }
 
+html {
+  overflow-x: hidden !important;
+}
+
 html,
 body {
   height: 100%;
@@ -41,7 +45,6 @@ body {
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  overflow: auto !important;
   scroll-behavior: smooth;
   background: #f6f9fb;
 }
